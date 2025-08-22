@@ -1,0 +1,22 @@
+<%- include ("partials/header.ejs") %>
+
+
+<div class="criacao text-center py-5">
+<h1 class="display-4 fw-bold" style="color: brown;"> Crie seu Post:</h1>
+</div>
+<div class="text-center justify-content-center my-2" >
+    <h2 class="my-2"> Título: </h2>
+
+<form action="/novo" method="POST" class="py-3">
+    <input type="text" class="shadow p-3 mb-3 rounded "name="titulo" placeholder="Título..." required>
+    <br>
+        <h2> Comentário: </h2>
+
+    <textarea class="shadow p-5 mb-4 rounded" name="mensagem" rows="4" placeholder="Pense por escrito..." required></textarea>
+    <br>
+    <button type="submit" class="btn btn-secondary zoom">Publicar Post</button>
+</form>
+<a class="btn btn-outline-warning my-3 "href="/"> Voltar para a Página Principal </a>
+</div>
+
+<%- include ("partials/footer.ejs") %>

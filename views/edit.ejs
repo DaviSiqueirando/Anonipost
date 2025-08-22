@@ -1,0 +1,21 @@
+<%- include ("partials/header.ejs") %>
+
+<div class="text-center justify-content-center" >
+<div class="edicao py-5">
+<h1  style="text-shadow: 2px 2px 5px #5a5a5a;"> Editar Post: </h1>
+</div>
+
+    <h2 class="my-2"> Título: </h2>
+
+<form action="/edit/<%= id %>" method="POST" class="py-3">
+    <input class="shadow p-3 mb-3  rounded " type="text" name="titulo" placeholder="Título..." value="<%= post.titulo %>"required>
+    <br>
+        <h2> Comentário: </h2>
+    <textarea class="shadow p-5 mb-4 rounded" name="mensagem" rows="4"  placeholder="Pense por escrito..." required> <%= post.mensagem %> </textarea>
+
+    <br>
+    <button type="submit" class="btn btn-success zoom">Salvar Alterações</button>
+</form>
+<a class="btn btn-outline-warning my-3 " href="/"> Voltar para a Página Principal </a>
+</div>
+<%- include ("partials/footer.ejs") %>

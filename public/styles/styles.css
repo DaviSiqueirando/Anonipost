@@ -1,0 +1,52 @@
+.zoom {
+  padding: 10px;
+  transition: transform .2s; /* Animation */
+
+  margin: 0 auto;
+}
+
+.zoom:hover{
+     transform: scale(1.2);
+}
+
+a{
+    color:  rgb(248, 248, 94);
+}
+.navbar{
+    background-color: rgb(15, 13, 13);
+}
+
+.status{
+    color: rgb(135, 135, 211);
+}
+
+.status2{
+    color: rgb(221, 128, 104);
+}
+footer{
+    background-color: black;
+}
+.menu{
+    background-image: url("/images/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.criacao{
+    background-image: url("/images/banner2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.postagem{
+    background-image: url("/images/banner3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.edicao{
+    background-image: url("/images/banner4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

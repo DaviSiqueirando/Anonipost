@@ -1,0 +1,33 @@
+<%- include ("partials/header.ejs") %>
+
+<div class="text-center"> 
+<div class="postagem py-3 fw-bold" style="text-shadow: 2px 2px 5px #615f5f;">
+    <h1> <%= post.titulo %> </h1> 
+
+<% if (post.data) { %> 
+    <p>Criado em: <%= post.data.toLocaleString('pt-BR') %></p>
+<% } %>
+
+<% if (post.dataEdicao) { %>
+    <p>Editado em: <%= post.dataEdicao.toLocaleString('pt-BR') %></p>
+<% } %>
+    <a class="btn btn-info" href="/edit/<%= id %>"> Editar Post </a>
+
+<hr>
+</div>
+<div class="mb-4">
+    <div class="justify-content-center shadow"  style="background-color: aliceblue;color: black;">
+        <p class=" py-3 mx-5 text-center case"> <%= post.mensagem %> </p>
+    </div>
+
+<a  class="btn btn-warning my-3 "href="/"> Voltar para a Página Principal </a>
+<br>
+<form action="/exclusao/<%= id %>" method="POST" style="display:inline;" >
+        <button type="submit" class="btn btn-outline-danger my-5"> Excluir Post</button>
+</form>
+</div>
+
+</div>
+        
+
+<%- include ("partials/footer.ejs") %>

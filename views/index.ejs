@@ -1,0 +1,35 @@
+<%- include ("partials/header.ejs") %>
+
+    <div class="text-center">
+        <div class="menu py-5">
+            <h1 class="display-5">Está se sentindo <p style="color: yellow;">Criativo? </p>
+            </h1>
+            <a style="font-size:30px" class="btn btn-success"href="/novo">Novo Post</a>
+
+        </div>
+        <p style="font-size: 30px"> <strong> Posts Recentes: </strong></p>
+
+        <% posts.forEach((post, index)=>{ %>
+            <h2><a href="/post/<%= index %>">
+                    <%= post.titulo %>
+                </a></h2>
+            <% if (post.data) { %>
+                <p class="status fw-bold"> <strong style="color:rgb(107, 211, 3)"> Criado </strong>  em: <%= post.data.toLocaleString('pt-BR') %>
+                </p>
+                <% } %>
+
+                    <% if (post.dataEdicao) { %>
+                        <p class="status fw-bold"><strong style="color:rgb(245, 161, 65)"> Editado </strong>  em: <%= post.dataEdicao.toLocaleString('pt-BR') %>
+                        </p>
+                        <% } %>
+                        <p class="font-italic"> <%= post.mensagem.substring(0, 100) %>...</p>
+                            <form action="/exclusao/<%= index %>" method="POST" style="display:inline;" class="mx-3">
+                                <button type="submit" class="btn btn-outline-danger"> Excluir Post</button>
+                            </form>
+                            <a href="/edit/<%= index  %>"  class="btn btn-outline-warning"> Editar Post </a>
+                            <hr>
+
+                            <%}); %>
+
+    </div>
+    <%- include ("partials/footer.ejs") %>
